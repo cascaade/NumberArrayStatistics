@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>NumberStat</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Playfair Display' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <!--   <meta http-equiv = "refresh" content = "1; url = ./testinaction" /> -->
+</head>
+
+<body>
+  <div id="leftside">
+    <h1>NumberStat</h1>
+    <p>Welcome to NumberStat! Here you can type an array of numbers, and the algorithm will tell you all it knows about
+      the data set!</p>
+    <hr>
+    <h3>Type your own numbers now!</h3>
+    <input autocomplete="off" id="array" placeholder="Ex: 0, 3, 4, 7, 3, 2, 5" type="string">
+    <br>
+    <label for="array">Separate your numbers by adding a <strong>strict</strong> comma, and then a space. Look at the
+      placeholder for an example. There should be no extra characters or spaces at the beginning or end of the string.
+      Also, letters can mess up the algorithm, so be sure <strong>not</strong> to put any.</label>
+    <p>NOTE: The numbers in the "Compiled Data" section are cut at the thousandths place. Please keep that in mide while
+      reviewing data. This is to prevent site interface crashing and/or causing processing errors.</p>
+    <button id="calculate">Calculate</button>
+    <p>or generate your array with a min, max, and amount of numbers.</p>
+    <label for="min">Min:</label>
+    <input id="min" type="number" />
+    <label for="max">Max:</label>
+    <input id="max" type="number" />
+    <label for="nums">Amount:</label>
+    <input id="nums" type="number" />
+    <br>
+    <button id="generate">Generate</button>
+  </div>
+  <div id="rightside">
+    <div class="BorderCorner">
+      <div id="rightsidecontent">
+        <h1>Compiled Data</h1>
+        <h4 class="datadisplay" id="rawarrdisplay">Ex: 0,3,4,7,3,2,5</h3>
+          <p class="datalabel" id="rawarraylabel">Raw Array</p>
+          <h4 class="datadisplay" id="arrdisplay">Ex: 0,2,3,3,4,5,7</h3>
+            <p class="datalabel" id="arraylabel">Sorted Array</p>
+            <table>
+              <tr>
+                <td>
+                  <h4 class="datadisplay" id="sumdisplay">Ex: 24</h4>
+                  <p class="datalabel" id="sumlabel">Sum</p>
+                </td>
+                <td>
+                  <h4 class="datadisplay" id="rangedisplay">Ex: 7</h4>
+                  <p class="datalabel" id="rangelabel">Range</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4 class="datadisplay" id="meandisplay">Ex: 3.428</h4>
+                  <p class="datalabel" id="meanlabel">Mean</p>
+                </td>
+                <td>
+                  <h4 class="datadisplay" id="maddisplay">Ex: 1.632</h4>
+                  <p class="datalabel" id="madlabel">Mean Absolute Deviation</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <h4 class="datadisplay" id="meddisplay">Ex: 12</h4>
+                  <p class="datalabel" id="medlabel">Median</p>
+                </td>
+                <td>
+                  <h4 class="datadisplay" id="modedisplay">Ex: 3</h4>
+                  <p class="datalabel" id="modelabel">Mode</p>
+                </td>
+              </tr>
+            </table>
+            <canvas id="dotplot"></canvas>
+      </div>
+    </div>
+    <button id="print">Print</button>
+    <button id="share">Share</button>
+    <p>Before exporting data, please make sure to have an array generated.</p>
+  </div>
+  <br>
+  <script src="calc.js"></script>
+  <script src="script.js"></script>
+  <script src="../../navbar/navbar.js"></script>
+</body>
+
+</html>
